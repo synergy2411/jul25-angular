@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynchronous Programming</title>
+  </head>
+  <body>
+    <p id="the-paragraph">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa libero,
+      doloremque quasi quia exercitationem, voluptatum delectus molestiae
+      numquam commodi doloribus totam molestias omnis aperiam quis.
+    </p>
+
+    <script>
+      window.onload = function () {
+        const paragraphEl = document.querySelector("#the-paragraph");
+        setTimeout(() => {
+          alert("Will halt the execution");
+        }, 1000);
+        paragraphEl.style.color = "red";
+      };
+    </script>
+  </body>
+</html>
