@@ -224,18 +224,39 @@
 // console.log(john.getDetails());
 
 // Method Overloading
-function add(n1: string, n2: string): string;
-function add(n1: number, n2: number): number;
-function add(n1: any, n2: any): any {
-  if (typeof n1 === "string" && typeof n2 === "string") {
-    return "Concatenated Result : " + n1 + n2;
-  }
+// function add(n1: string, n2: string): string;
+// function add(n1: number, n2: number): number;
+// function add(n1: any, n2: any): any {
+//   if (typeof n1 === "string" && typeof n2 === "string") {
+//     return "Concatenated Result : " + n1 + n2;
+//   }
 
-  if (typeof n1 === "number" && typeof n2 === "number") {
-    return "The Sum is : " + (n1 + n2);
-  }
+//   if (typeof n1 === "number" && typeof n2 === "number") {
+//     return "The Sum is : " + (n1 + n2);
+//   }
+// }
+
+// console.log(add("Hello ", "World"));
+
+// console.log(add(12, 13));
+
+// GENERICS
+// function addAtBeginning(item: string, items: string[]): string[] {
+//   return [item, ...items];
+// }
+
+// console.log(addAtBeginning("Monica", ["Joey", "Ross", "Rachel"]));
+
+// function addAtBeginning(item: number, items: number[]): number[] {
+//   return [item, ...items];
+// }
+
+// console.log(addAtBeginning(101, [102, 103, 104, 105]));
+
+function addAtBeginning<T>(item: T, items: T[]): T[] {
+  return [item, ...items];
 }
 
-console.log(add("Hello ", "World"));
+const strArray = addAtBeginning<string>("Joey", ["Monica", "Ross", "Rachel"]);
 
-console.log(add(12, 13));
+const numberArray = addAtBeginning<number>(101, [102, 103, 104, 105]);
