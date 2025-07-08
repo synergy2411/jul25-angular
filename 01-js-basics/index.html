@@ -12,13 +12,35 @@
       numquam commodi doloribus totam molestias omnis aperiam quis.
     </p>
 
+    <h1>My Posts</h1>
+    <hr />
+    <ul id="post-container"></ul>
+
     <script>
       window.onload = function () {
+        const postContainerEl = document.querySelector("#post-container");
         const paragraphEl = document.querySelector("#the-paragraph");
         setTimeout(() => {
           alert("Will halt the execution");
         }, 1000);
         paragraphEl.style.color = "red";
+
+        // Fetching Data
+        async function fetchPosts(url) {
+          try {
+            const response = await fetch(url);
+            const posts = await response.json();
+            posts.forEach((post) => {
+              const liElement = document.createElement("li");
+              liElement.innerHTML = post.title;
+              postContainerEl.appendChild(liElement);
+            });
+          } catch (err) {
+            console.error(err);
+          }
+        }
+
+        fetchPosts("https://jsonplaceholder.typicode.com/posts");
       };
     </script>
   </body>

@@ -48,3 +48,26 @@ str.isPrototypeOf()
 
 - Primitive : String, Number, Boolean, Symbol
 - References: Array, Object, Dates, Functions
+
+# ES6/ES2015+ features
+
+- Arrow functions
+- Destructuring
+- Rest/Spread
+- Block Scope (let / const)
+- Template Literals
+
+---
+
+# Promises
+
+- then().catch()
+- async...await
+- Promise API
+
+# TypeScript
+
+- Types
+- Modules
+- Decorators
+- Generics

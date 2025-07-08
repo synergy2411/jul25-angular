@@ -168,19 +168,102 @@
 // CALLBACKS : function supplied to another function
 // HIGHER ORDER FUNCTION: functions receiving the callback in parameter
 
-function greet(arr, cb) {
-  if (arr.length > 2) {
-    cb(null, "More than two values");
-  } else {
-    cb(new Error("Too few values"));
-  }
-}
+// function greet(arr, cb) {
+//   if (arr.length > 2) {
+//     cb(null, "More than two values");
+//   } else {
+//     cb(new Error("Too few values"));
+//   }
+// }
 
-greet([1, 23], function (error, data) {
-  if (error) {
-    console.error(error);
-  }
-  console.log(data);
-});
+// greet([1, 23], function (error, data) {
+//   if (error) {
+//     console.error(error);
+//   }
+//   console.log(data);
+// });
 
 // Error First, Callback Last
+
+// PROMISE
+
+// Promise Builder Code
+// function buildPromise(arr) {
+//   let promise = new Promise(function (resolve, reject) {
+//     setTimeout(() => {
+//       if (arr.length > 2) {
+//         resolve({ message: "success" });
+//       } else {
+//         reject(new Error("Something went wrong!"));
+//       }
+//     }, 1500);
+//   });
+
+//   return promise;
+// }
+
+// Promise Consumer Code
+// async function consumePromiseWithAsyncAndAwait() {
+//   try {
+//     const response = await buildPromise([1, 2]); // first API Call
+//     console.log("ASYNC RESPONSE : ", response);
+//     const responseTwo = await buildPromise([12, 3, 4, 5, 6]); // second API Call
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+
+// consumePromiseWithAsyncAndAwait();
+
+// Promise Consumer Code - then().catch()
+// function consumePromiseWithThenAnfCatch() {
+//   buildPromise([1, 2, 3, 4])
+//     .then((response) => {
+//       console.log("First then() RESPONSE : ", response);
+//       return response.message;
+//     })
+//     .then((message) => console.log("Second then() MESSAGE: ", message))
+//     .catch((err) => console.error(err));
+// }
+
+// consumePromiseWithThenAnfCatch();
+
+// fetch(url).then(result).then(fetch(secondUrl).then(result).catch()).catch()
+
+// Promise API -
+// - all : all or none
+// - allSettled : will provide resaon for promise rejection
+// - race : first settled promise result
+// - any : first fulfilled promise result
+// - resolve : immediately resolve the promise
+// - reject : immediately reject the promise
+
+// Promise.resolve("Test").then(console.log);
+// Promise.reject(new Error("Bad thing")).catch(console.error);
+
+function createPromise(data, mills) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(data);
+    }, mills);
+  });
+}
+
+const p1 = createPromise("First Promise", 2000);
+const p2 = createPromise("Second Promise", 1000);
+const p3 = createPromise("third Promise", 4000);
+const p5 = Promise.reject(new Error("Something went wrong"));
+const p4 = Promise.resolve("Fourth Promise");
+
+// Promise.all([p1, p2, p3, p4, p5]).then((result) =>
+//   console.log("RESULT : ", result)
+// );
+// Promise.allSettled([p1, p2, p3, p4, p5])
+//   .then((result) => console.log("RESULT : ", result))
+//   .catch(console.error);
+// Promise.race([p1, p2, p3, p4, p5])
+//   .then((result) => console.log("RESULT : ", result))
+//   .catch(console.error);
+Promise.race([p1, p2, p3, p5, p4])
+  .then((result) => console.log("RESULT : ", result))
+  .catch(console.error);
