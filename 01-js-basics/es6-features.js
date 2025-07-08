@@ -264,6 +264,6 @@ const p4 = Promise.resolve("Fourth Promise");
 // Promise.race([p1, p2, p3, p4, p5])
 //   .then((result) => console.log("RESULT : ", result))
 //   .catch(console.error);
-Promise.race([p1, p2, p3, p5, p4])
+Promise.any([p1, p2, p3, p5, p4])
   .then((result) => console.log("RESULT : ", result))
   .catch(console.error);

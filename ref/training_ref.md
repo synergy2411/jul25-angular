@@ -71,3 +71,11 @@ str.isPrototypeOf()
 - Modules
 - Decorators
 - Generics
+
+# Vite TypeScript Project
+
+> npm create vite@latest
+> typescript-basics -> Vanilla -> Typescript
+> cd typescript-basics
+> npm install
+> npm run dev
