@@ -164,3 +164,9 @@ str.isPrototypeOf()
 - ng generate component path/to/component
 - ng g c path/to/component
 - ng g c users
+
+# Bootstrap Library Added
+
+> npm install bootstrap
+> build -> style config in angular.json
+> --- "./node_modules/bootstrap/dist/css/bootstrap.min.css",
