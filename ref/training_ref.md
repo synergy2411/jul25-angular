@@ -61,11 +61,19 @@ str.isPrototypeOf()
 
 # Promises
 
+- Pending
+- Settled : Fulfilled / Rejected
 - then().catch()
 - async...await
-- Promise API
+- Promise API (Static Methods)
+  : all
+  : allSettled
+  : race
+  : any
+  : resolve
+  : reject
 
-# TypeScript
+# TypeScript : JavaScript with types
 
 - Types
 - Modules
@@ -79,3 +87,28 @@ str.isPrototypeOf()
 > cd typescript-basics
 > npm install
 > npm run dev
+
+---
+
+# TypeScript : Decorators / Modules
+
+# Decorators : Function for meta-programming
+
+- Class : @Component(), @Directive(), @Pipe(), @Injectable(), @NgModule()
+- Method : @HostListener()
+- Property : @Input(), @Output(), @HostBinding()
+- Parameter : @Skip(), @Optional()
+
+# Other JS Libs and Frameworks
+
+# Angular Bootstrap Process
+
+# Angular Components
+
+# Angular App
+
+- Components
+- Directives
+- Services
+- Pipes
+- Modules

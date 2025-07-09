@@ -1,20 +1,11 @@
-window.onload = function () {
-  const inputEl: HTMLInputElement = document.querySelector(
-    "#txtInput"
-  ) as HTMLInputElement;
-  const btnAddEl: HTMLButtonElement = document.querySelector(
-    "#btnAdd"
-  ) as HTMLButtonElement;
+import { getDailyFortune, getLuckyNumber } from "./utils/fortune";
+import { sum } from "./utils/maths";
 
-  const listContainerEl: HTMLUListElement = document.querySelector(
-    "#list-container"
-  ) as HTMLUListElement;
+import multiplyFn from "./utils/maths";
 
-  btnAddEl.addEventListener("click", function (event) {
-    event.preventDefault();
-    const liElement = document.createElement("li");
-    liElement.innerHTML = inputEl.value;
-    listContainerEl.appendChild(liElement);
-    inputEl.value = "";
-  });
-};
+console.log("Today Fortune : ", getDailyFortune());
+
+console.log("Your lucky number today : ", getLuckyNumber());
+
+console.log("Multiply : ", multiplyFn(3, 4));
+console.log("Sum : ", sum(3, 4));
