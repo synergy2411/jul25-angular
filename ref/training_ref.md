@@ -112,3 +112,55 @@ str.isPrototypeOf()
 - Services
 - Pipes
 - Modules
+
+# Other JavaScript Libs / Frameworks
+
+- AngularJS : v1.x; 2011; Library
+- Angular : 2014, Google Team; Templates, Form Validation, Remote Server Calls, Data binding, SPA, State Management, Shadow DOM, Components, MV\* Pattern, Animation etc. Enterprise level Apps.
+
+- Angular Material : Material Component
+- Angular Universal : SSR
+
+- React / React Native : Facebook Team, 35kb, quickly rendering the UI, VDOM, Props, State, Diffing Algo, Redux - State Management, React Router DOM creates SPA, ReactHookForm, Supertest, Joe, Formik etc
+
+- Preact: 5kb
+
+- Next : React Framework for Server Side Rendering
+- Vue : "Evan You", Progressive framework, emerging community, template oriented, VDOM, Components, State Maangement, SPA, DOM manipulation, Templates, Form Validation etc
+- jQuery : DOM manipulation, AJAX Calls, Animation
+- Knockout : MVVM Pattern at client side, 2 way data binding
+- Backbone : MVC Pattern at client side
+- Polymer : Create rich components
+- Stencil : VDOM, Web Component
+- D3 : Charts
+- Ionic : Mobile Apps (Angular, React, Vue), one codebase, any platform.
+- Bootstrap: client side JS library for built-in components, Grids, layouts
+
+- Node : Server side Platform
+- Express/ Koa/ Hapi/ SailsJS/ KrakenJS : Web app Framework for NodeJS App
+- lit
+
+# Angular Version 17.x
+
+- Standalone Components
+- Signals
+
+- Modules
+
+# Angular CLI
+
+- [sudo] npm install -g @angular/cli@17
+- ng version
+- ng new frontend --standalone false --no-routing
+- cd frontend
+- npm start / ng serve [-o]
+
+# Multiple Angular CLI Installation
+
+- npx @angular/cli@17 new frontend --standalone false --no-routing
+
+# Angular CLI Command
+
+- ng generate component path/to/component
+- ng g c path/to/component
+- ng g c users
