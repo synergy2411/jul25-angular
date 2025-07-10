@@ -170,3 +170,14 @@ str.isPrototypeOf()
 > npm install bootstrap
 > build -> style config in angular.json
 > --- "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+
+ng serve --port=4040
+
+# Data Binding
+
+- Property Binding - []
+- Event Binding - ()
+- 2 way data binding - [(ngModel)]
+
+- ng g c components/users/user-img
+- ng g c components/users/user-info

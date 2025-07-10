@@ -1,26 +1,13 @@
 <h2>Users component loaded successfully</h2>
 
-<img [src]="user.avatar" [alt]="user.firstName" />
+<div class="row">
+  <div class="col-4">
+    <app-user-img [user]="user"></app-user-img>
+  </div>
 
-<button (click)="onMoreInfo(user)">More Info</button>
-
-<h1>{{ user.firstName }} {{ user.lastName }}</h1>
-
-<p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
-
-<p>Income : <span [innerHTML]="user.income"></span></p>
-
-<p>
-  Total Votes : {{ user.votes }}
-
-  <input
-    type="number"
-    [value]="user.votes"
-    (input)="user.votes = +inputVotes.value"
-    #inputVotes
-  />
-
-  <input type="number" [(ngModel)]="user.votes" />
-</p>
+  <div class="col-8">
+    <app-user-info [user]="user"></app-user-info>
+  </div>
+</div>
 
 <!-- FormsModule -->
