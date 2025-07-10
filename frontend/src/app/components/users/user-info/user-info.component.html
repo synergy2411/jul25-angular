@@ -5,7 +5,13 @@
 
 <p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
 
-<p>Income : <span [innerHTML]="user.income"></span></p>
+<p *ngIf="user.isWorking; else userNotWorking">
+  Income : <span [innerHTML]="user.income"></span>
+</p>
+
+<ng-template #userNotWorking>
+  <p>Mr. {{ user.lastName }} is not working anymore.</p>
+</ng-template>
 
 <p>
   Total Votes : {{ user.votes }}

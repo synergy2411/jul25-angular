@@ -1,18 +1,22 @@
 <h1>Users Component</h1>
 
-<div class="row">
-  <div class="col-4">
-    <app-user-img
-      [user]="user"
-      (childEvent)="onMoreInfo($event)"
-    ></app-user-img>
-  </div>
+<ul class="list-group">
+  <li *ngFor="let user of users; odd as isOdd" class="list-group-item mb-3">
+    <div class="row" [ngClass]="{ 'the-background': isOdd }">
+      <div class="col-4">
+        <app-user-img
+          [user]="user"
+          (childEvent)="onMoreInfo($event)"
+        ></app-user-img>
+      </div>
 
-  <div class="col-8">
-    <app-user-info [user]="user">
-      <header>The header Info</header>
-      <main>The main section</main>
-      <footer>The Footer Info</footer>
-    </app-user-info>
-  </div>
-</div>
+      <div class="col-8">
+        <app-user-info [user]="user">
+          <header>The header Info</header>
+          <main>The main section</main>
+          <footer>The Footer Info</footer>
+        </app-user-info>
+      </div>
+    </div>
+  </li>
+</ul>

@@ -8,12 +8,12 @@ import { USER_DATA } from '../data/mocks';
   styleUrl: './users.component.css',
 })
 export class UsersComponent implements OnInit, OnDestroy {
-  user!: IUser;
+  users!: IUser[];
 
   constructor() {}
 
   ngOnInit(): void {
-    this.user = USER_DATA;
+    this.users = USER_DATA;
   }
 
   onMoreInfo(theUser: IUser) {

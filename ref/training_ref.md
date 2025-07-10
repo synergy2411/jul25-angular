@@ -182,3 +182,4 @@ ng serve --port=4040
 - ng g c components/users/user-img
 - ng g c components/users/user-info
 - ng g c components/demo/life-cycle
+- ng g c components/demo/directive-example
