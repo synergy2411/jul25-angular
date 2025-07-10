@@ -1,20 +1,24 @@
 <!-- Slot -->
 <ng-content select="header"></ng-content>
 
-<h1 appHighlight favColor="blue">{{ user.firstName }} {{ user.lastName }}</h1>
+<h1 appHighlight favColor="yellow">
+  {{ user.firstName | titlecase }} {{ user.lastName | titlecase }}
+</h1>
 
-<p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
+<p>
+  Date of Birth : <span [innerHTML]="user.dob | date : 'dd-MM-yyyy'"></span>
+</p>
 
 <p *ngIf="user.isWorking; else userNotWorking">
-  Income : <span [innerHTML]="user.income"></span>
+  Income : <span [innerHTML]="user.income | currency : 'INR'"></span>
 </p>
 
 <ng-template #userNotWorking>
-  <p>Mr. {{ user.lastName }} is not working anymore.</p>
+  <p>Mr. {{ user.lastName | titlecase }} is not working anymore.</p>
 </ng-template>
 
 <p>
-  Total Votes : {{ user.votes }}
+  Total Votes : {{ user.votes | number : "3.2" }}
 
   <input
     type="number"
@@ -27,3 +31,7 @@
 </p>
 
 <ng-content select="footer"></ng-content>
+
+<!-- {{ user | json }} -->
+
+<!-- {{ 120 | percent }} -->
