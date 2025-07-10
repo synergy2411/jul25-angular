@@ -1,0 +1,82 @@
+<h1>Directive Example</h1>
+
+<h3
+  [ngStyle]="dynamicStyles"
+  (mouseenter)="onStyleChange('red')"
+  (mouseleave)="onStyleChange('blue')"
+>
+  ngStyle Attribute Directive Example
+</h3>
+
+<h3
+  [ngClass]="dynamicClass"
+  (mouseenter)="onClassChange()"
+  (mouseleave)="onClassChange()"
+>
+  ngClass Attribute Directive Example
+</h3>
+
+<hr />
+
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Is First</th>
+      <th>Is Last</th>
+      <th>Is Even</th>
+      <th>Is Odd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="
+        let product of products;
+        index as i;
+        first as isFirst;
+        last as isLast;
+        even as isEven;
+        odd as isOdd
+      "
+    >
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.title }}</td>
+      <td>{{ product.price }}</td>
+      <td *ngIf="product.isAvailable; else productNotAvailable">
+        {{ product.qty }}
+      </td>
+      <td>{{ isFirst }}</td>
+      <td>{{ isLast }}</td>
+      <td>{{ isEven }}</td>
+      <td>{{ isOdd }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #productNotAvailable>
+  <td>Not Available</td>
+</ng-template>
+
+<br />
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" (click)="tab = 1">Add New Element</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="tab = 2">Show All Elements</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="tab = 3">Delete Element</a>
+  </li>
+</ul>
+
+<div [ngSwitch]="tab">
+  <div *ngSwitchCase="1">Add New</div>
+  <div *ngSwitchCase="2">Show All</div>
+  <div *ngSwitchCase="3">Delete</div>
+  <div *ngSwitchDefault>Default</div>
+</div>
