@@ -1,3 +1,6 @@
+<!-- Slot -->
+<ng-content select="header"></ng-content>
+
 <h1>{{ user.firstName }} {{ user.lastName }}</h1>
 
 <p>Date of Birth : <span [innerHTML]="user.dob"></span></p>
@@ -16,3 +19,5 @@
 
   <input type="number" [(ngModel)]="user.votes" />
 </p>
+
+<ng-content select="footer"></ng-content>
