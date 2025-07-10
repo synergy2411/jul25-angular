@@ -1,27 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { IUser } from '../model/user';
+import { USER_DATA } from '../data/mocks';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrl: './users.component.css',
 })
-export class UsersComponent {
-  user = {
-    firstName: 'bill',
-    lastName: 'gates',
-    company: 'Microsoft',
-    isWorking: true,
-    income: 50000,
-    dob: new Date('Dec 01, 1965'),
-    avatar: './assets/images/bill.jpeg',
-    votes: 120,
-  };
+export class UsersComponent implements OnInit, OnDestroy {
+  user!: IUser;
 
-  onMoreInfo(theUser: any) {
+  constructor() {}
+
+  ngOnInit(): void {
+    this.user = USER_DATA;
+  }
+
+  onMoreInfo(theUser: IUser) {
     alert(
       `Mr. ${theUser.lastName.toUpperCase()} is working with ${
         theUser.company
       }!`
     );
   }
+
+  ngOnDestroy(): void {}
 }
