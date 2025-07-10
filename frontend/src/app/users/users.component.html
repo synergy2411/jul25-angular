@@ -1,13 +1,14 @@
-<h2>Users component loaded successfully</h2>
+<h1>Users Component</h1>
 
 <div class="row">
   <div class="col-4">
-    <app-user-img [user]="user"></app-user-img>
+    <app-user-img
+      [user]="user"
+      (childEvent)="onMoreInfo($event)"
+    ></app-user-img>
   </div>
 
   <div class="col-8">
     <app-user-info [user]="user"></app-user-info>
   </div>
 </div>
-
-<!-- FormsModule -->

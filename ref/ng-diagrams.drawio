@@ -320,6 +320,9 @@
         <mxCell id="JW5VSEARZVbQNAoibjVQ-2" value="Parent (Users)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="344" y="210" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="JW5VSEARZVbQNAoibjVQ-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="JW5VSEARZVbQNAoibjVQ-3" target="JW5VSEARZVbQNAoibjVQ-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="JW5VSEARZVbQNAoibjVQ-3" value="Child&amp;nbsp;&lt;div&gt;(UserImg / UserInfo)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="344" y="450" width="120" height="60" as="geometry" />
         </mxCell>
@@ -331,6 +334,12 @@
         </mxCell>
         <mxCell id="JW5VSEARZVbQNAoibjVQ-7" value="user" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="285" y="188" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JW5VSEARZVbQNAoibjVQ-10" value="@Output()&lt;div&gt;EventEmitter&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="480" y="455" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="JW5VSEARZVbQNAoibjVQ-11" value="(Event Binding)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="464" y="218" width="110" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
