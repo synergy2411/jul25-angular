@@ -6,6 +6,7 @@ import {
   Validators,
   AbstractControl,
   ValidationErrors,
+  FormArray,
 } from '@angular/forms';
 
 @Component({
@@ -29,6 +30,7 @@ export class RegisterComponent {
           '',
           RegisterComponent.confirmPasswordValidatorWithControl
         ),
+        hobbies: new FormArray([]),
       }
       // {
       //   validators: RegisterComponent.confirmPasswordValidatorWithForm,
@@ -48,7 +50,25 @@ export class RegisterComponent {
     return this.registerForm.get('cnfPassword') as FormControl;
   }
 
+  get hobbies() {
+    return this.registerForm.get('hobbies') as FormArray;
+  }
+
+  addNewHobby() {
+    this.hobbies.push(
+      new FormGroup({
+        name: new FormControl(),
+        frequency: new FormControl(),
+      })
+    );
+  }
+
+  deleteHobby(i: number) {
+    this.hobbies.removeAt(i);
+  }
+
   onSubmit() {
+    console.log(this.registerForm);
     console.log('Username : ', this.registerForm.value.username);
     console.log('Password : ', this.registerForm.value.password);
   }
