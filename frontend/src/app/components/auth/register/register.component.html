@@ -32,7 +32,7 @@
           <!-- password -->
           <div class="form-floating mb-3">
             <input
-              type="password"
+              type="text"
               class="form-control"
               name="password"
               id="password"
@@ -58,33 +58,55 @@
           <!-- confirm password -->
           <div class="form-floating mb-3">
             <input
-              type="password"
+              type="text"
               class="form-control"
               name="cnfPassword"
               id="cnfPassword"
               placeholder=""
+              formControlName="cnfPassword"
             />
             <label for="cnfPassword">Confirm Password</label>
 
-            Confirm Passwrod : {{ cnfPassword.valid }}
-          </div>
-
-          <!-- buttons - Register & Reset -->
-          <div class="row">
-            <div class="col">
-              <div class="d-grid">
-                <button
-                  [disabled]="!registerForm.valid"
-                  class="btn btn-success"
-                  type="submit"
-                >
-                  Register
-                </button>
+            <!-- Control Level Validation -->
+            <div
+              *ngIf="
+                cnfPassword.touched && cnfPassword.dirty && cnfPassword.invalid
+              "
+            >
+              <div *ngIf="cnfPassword.hasError('passwordMismatch')">
+                <p class="alert alert-danger">Password mismatched.</p>
               </div>
             </div>
-            <div class="col">
-              <div class="d-grid">
-                <button class="btn btn-secondary" type="button">Reset</button>
+
+            <!-- Form Level Validation -->
+            <!-- <div
+              *ngIf="
+                cnfPassword.touched &&
+                cnfPassword.dirty &&
+                registerForm.hasError('passwordMismatch')
+              "
+            >
+              <p class="alert alert-danger">Password mismatched.</p>
+            </div> -->
+            <!-- </div> -->
+
+            <!-- buttons - Register & Reset -->
+            <div class="row">
+              <div class="col">
+                <div class="d-grid">
+                  <button
+                    [disabled]="!registerForm.valid"
+                    class="btn btn-success"
+                    type="submit"
+                  >
+                    Register
+                  </button>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-grid">
+                  <button class="btn btn-secondary" type="button">Reset</button>
+                </div>
               </div>
             </div>
           </div>

@@ -17,15 +17,23 @@ export class RegisterComponent {
   registerForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    this.registerForm = this.fb.group({
-      username: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.minLength(6),
-        RegisterComponent.exclamationValidator,
-      ]),
-      cnfPassword: new FormControl(),
-    });
+    this.registerForm = this.fb.group(
+      {
+        username: new FormControl('', [Validators.required, Validators.email]),
+        password: new FormControl('', [
+          Validators.required,
+          Validators.minLength(6),
+          RegisterComponent.exclamationValidator,
+        ]),
+        cnfPassword: new FormControl(
+          '',
+          RegisterComponent.confirmPasswordValidatorWithControl
+        ),
+      }
+      // {
+      //   validators: RegisterComponent.confirmPasswordValidatorWithForm,
+      // }
+    );
   }
 
   get username() {
@@ -49,12 +57,33 @@ export class RegisterComponent {
   static exclamationValidator(
     control: AbstractControl
   ): ValidationErrors | null {
-    console.log(control);
     const hasExclamation = control.value.indexOf('!');
     if (hasExclamation >= 0) {
       return null;
     } else {
       return { exclamation: true };
     }
+  }
+
+  static confirmPasswordValidatorWithForm(
+    control: AbstractControl
+  ): ValidationErrors | null {
+    const password = control.get('password');
+    const cnfPassword = control.get('cnfPassword');
+    if (password && cnfPassword) {
+      if (password.value !== cnfPassword.value) {
+        return { passwordMismatch: true };
+      }
+    }
+    return null;
+  }
+
+  static confirmPasswordValidatorWithControl(control: any) {
+    if (control && control.parent) {
+      if (control.value !== control.parent.controls['password'].value) {
+        return { passwordMismatch: true };
+      }
+    }
+    return null;
   }
 }
