@@ -185,3 +185,56 @@ ng serve --port=4040
 - ng g c components/demo/directive-example
 - ng g c components/demo/pipe-example
 - ng g d directives/highlight
+
+# Nested Component Communication
+
+- PArent to Child -> @Input()
+- Child to Parent -> @Output() + EventEmitter
+
+# Content Projection - Slot API
+
+- ng-content
+
+# Directives - Marker on UI
+
+- Component : with template
+- Attribute : ngStyle, ngClass
+- Structural: *ngIf, *ngFor, \*ngSwitch (ng-template #productNotAvailable)
+- @HostBinding() : binds host element property
+- @HostListener() : binds the host element event with method
+
+# Pipe : Format the UI
+
+---
+
+# Pipe : Custom Pipes
+
+# Forms
+
+- Template
+- Model / Reactive
+
+# Service
+
+9876543210 | countryCode : 'IND' => +91 9876543210
+
+date : 'dd-MM-yyyy'
+currency : 'INR'
+
+- ng g p pipes/country-code
+
+- Pure Pipe : pure changes
+  let user = { // x09ix09
+  name : "John"
+  }
+
+user = { name : "Mary" }; // x09ic876
+
+let frineds = ["Ross", "Rachel", "Monica"];
+
+frineds = ["Ross", "Rachel", "Monica", "Joey"]; // pure change
+
+- Impure Pipe : pure as well as impure changes
+
+user.name = "Jenny"; // Impure change
+friends.push("Joey"); // Impure change

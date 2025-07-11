@@ -10,6 +10,9 @@ import { LifeCycleComponent } from './components/demo/life-cycle/life-cycle.comp
 import { DirectiveExampleComponent } from './components/demo/directive-example/directive-example.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { PipeExampleComponent } from './components/demo/pipe-example/pipe-example.component';
+import { CountryCodePipe } from './pipes/country-code.pipe';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { PipeExampleComponent } from './components/demo/pipe-example/pipe-exampl
     DirectiveExampleComponent,
     HighlightDirective,
     PipeExampleComponent,
+    CountryCodePipe,
+    ReversePipe,
+    FilterPipe,
   ],
   imports: [
     // Modules - built-in, custom
