@@ -17,6 +17,16 @@
               formControlName="username"
             />
             <label for="username">Username</label>
+            <div *ngIf="username.touched && username.invalid && username.dirty">
+              <div *ngIf="username.hasError('required')">
+                <p class="alert alert-danger">Username is mandatory field.</p>
+              </div>
+              <div *ngIf="username.hasError('email')">
+                <p class="alert alert-danger">
+                  Invalid email format for username field.
+                </p>
+              </div>
+            </div>
           </div>
 
           <!-- password -->
@@ -30,13 +40,46 @@
               formControlName="password"
             />
             <label for="password">Password</label>
+
+            <!-- Password Error Handling -->
+            <div *ngIf="password.touched && password.invalid && password.dirty">
+              <div *ngIf="password.hasError('required')">
+                <p class="alert alert-danger">Password is mandatory field.</p>
+              </div>
+              <div *ngIf="password.hasError('minlength')">
+                <p class="alert alert-danger">At least 6 characters needed.</p>
+              </div>
+              <div *ngIf="password.hasError('exclamation')">
+                <p class="alert alert-danger">Exclamation (!) required.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- confirm password -->
+          <div class="form-floating mb-3">
+            <input
+              type="password"
+              class="form-control"
+              name="cnfPassword"
+              id="cnfPassword"
+              placeholder=""
+            />
+            <label for="cnfPassword">Confirm Password</label>
+
+            Confirm Passwrod : {{ cnfPassword.valid }}
           </div>
 
           <!-- buttons - Register & Reset -->
           <div class="row">
             <div class="col">
               <div class="d-grid">
-                <button class="btn btn-success" type="submit">Register</button>
+                <button
+                  [disabled]="!registerForm.valid"
+                  class="btn btn-success"
+                  type="submit"
+                >
+                  Register
+                </button>
               </div>
             </div>
             <div class="col">
