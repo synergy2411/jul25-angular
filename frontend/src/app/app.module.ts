@@ -15,6 +15,10 @@ import { ReversePipe } from './pipes/reverse.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { UserService } from './services/user.service';
+import { CounterOneComponent } from './components/demo/counter/counter-one/counter-one.component';
+import { CounterTwoComponent } from './components/demo/counter/counter-two/counter-two.component';
+import { CounterService } from './services/counter.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,8 @@ import { RegisterComponent } from './components/auth/register/register.component
     FilterPipe,
     LoginComponent,
     RegisterComponent,
+    CounterOneComponent,
+    CounterTwoComponent,
   ],
   imports: [
     // Modules - built-in, custom
@@ -39,7 +45,11 @@ import { RegisterComponent } from './components/auth/register/register.component
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [], // Services
+  providers: [
+    CounterService,
+    // UserService,
+    // {provide : UserService, useClass: UserService}
+  ], // Services
   bootstrap: [AppComponent],
 })
 export class AppModule {}

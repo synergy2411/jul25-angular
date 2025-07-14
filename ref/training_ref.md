@@ -244,3 +244,35 @@ friends.push("Joey"); // Impure change
 - HTML5 Validation
 - CSS Classes and State
 - "ngForm" - Form
+
+---
+
+# Week - 01
+
+- JavaScript (ES6+ features)
+- TypeScript
+- Angular
+  > Bootstrap Process
+  > Component : resuable; creates view
+  > Directive : marker on UI ( Structural and Attribute)
+  > Pipe : format the UI (Pure and Impure)
+  > Template Driven and Model Driven (Reactive)
+  > : ngTouched / ngUntouched
+  > : ngValid / ngInvalid
+  > : ngDirty / ngPristine
+
+---
+
+# Service - @Injectable()
+
+- Providers
+- Can be registered self, using modules, using components
+- DIP : Dependency Injection Principle
+- SRP : Single Responsibility Principle
+- ng g s services/user
+
+- Micro-frontend
+
+- CounterService
+- CounterOne
+- CounterTwo
