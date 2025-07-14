@@ -19,6 +19,7 @@ import { UserService } from './services/user.service';
 import { CounterOneComponent } from './components/demo/counter/counter-one/counter-one.component';
 import { CounterTwoComponent } from './components/demo/counter/counter-two/counter-two.component';
 import { CounterService } from './services/counter.service';
+import { ObservableExampleComponent } from './components/demo/observable-example/observable-example.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CounterService } from './services/counter.service';
     RegisterComponent,
     CounterOneComponent,
     CounterTwoComponent,
+    ObservableExampleComponent,
   ],
   imports: [
     // Modules - built-in, custom

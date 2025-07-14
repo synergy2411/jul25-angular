@@ -207,14 +207,18 @@ ng serve --port=4040
 
 ---
 
-# Pipe : Custom Pipes
-
 # Forms
 
 - Template
 - Model / Reactive
 
-# Service
+# Template Driven Form
+
+- HTML5 Validation
+- CSS Classes and State
+- "ngForm" - Form
+
+# Pipe : Custom Pipes
 
 9876543210 | countryCode : 'IND' => +91 9876543210
 
@@ -238,12 +242,6 @@ frineds = ["Ross", "Rachel", "Monica", "Joey"]; // pure change
 
 user.name = "Jenny"; // Impure change
 friends.push("Joey"); // Impure change
-
-# Template Driven Form
-
-- HTML5 Validation
-- CSS Classes and State
-- "ngForm" - Form
 
 ---
 
@@ -276,3 +274,25 @@ friends.push("Joey"); // Impure change
 - CounterService
 - CounterOne
 - CounterTwo
+
+# Observable
+
+- Series of events (data)
+- Lazily executed until subscribe
+- Powerful Operators
+- Keeps an eye on data-source
+- Cancelable
+- Both Sync and Async
+- Event based API
+- Multi-casting
+- Better Error Handling
+- Hot and Cold Observables
+
+# Promise
+
+- One shot (resolve / rejected)
+- Eagerly executed
+- No Operator support
+- Manual Http polling
+- Not Cancelable
+- Only Async
