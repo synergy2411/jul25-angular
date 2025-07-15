@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
@@ -20,6 +21,8 @@ import { CounterOneComponent } from './components/demo/counter/counter-one/count
 import { CounterTwoComponent } from './components/demo/counter/counter-two/counter-two.component';
 import { CounterService } from './services/counter.service';
 import { ObservableExampleComponent } from './components/demo/observable-example/observable-example.component';
+import { ExpensesComponent } from './components/expenses/expenses.component';
+import { ExpenseItemComponent } from './components/expenses/expense-item/expense-item.component';
 
 @NgModule({
   declarations: [
@@ -40,12 +43,15 @@ import { ObservableExampleComponent } from './components/demo/observable-example
     CounterOneComponent,
     CounterTwoComponent,
     ObservableExampleComponent,
+    ExpensesComponent,
+    ExpenseItemComponent,
   ],
   imports: [
     // Modules - built-in, custom
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
     CounterService,

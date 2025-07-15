@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="text-center">{{ expense.title | uppercase }}</h4>
+  </div>
+  <div class="card-body">
+    <p>Created Date : {{ expense.createdAt | date : "MMM dd, yyyy" }}</p>
+    <p>Amount : {{ expense.amount | currency : "INR" }}</p>
+  </div>
+</div>
