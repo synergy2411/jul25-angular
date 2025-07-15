@@ -23,6 +23,7 @@ import { CounterService } from './services/counter.service';
 import { ObservableExampleComponent } from './components/demo/observable-example/observable-example.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
 import { ExpenseItemComponent } from './components/expenses/expense-item/expense-item.component';
+import { ExpenseFormComponent } from './components/expenses/expense-form/expense-form.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { ExpenseItemComponent } from './components/expenses/expense-item/expense
     ObservableExampleComponent,
     ExpensesComponent,
     ExpenseItemComponent,
+    ExpenseFormComponent,
   ],
   imports: [
     // Modules - built-in, custom

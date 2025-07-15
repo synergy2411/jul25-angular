@@ -14,4 +14,18 @@ export class ExpensesService {
   fetchExpenses(): Observable<IExpense[]> {
     return this.httpClient.get<IExpense[]>(this.baseURL);
   }
+
+  createExpense(newExpense: IExpense): Observable<IExpense> {
+    return this.httpClient.post<IExpense>(this.baseURL, newExpense, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  }
+
+  deleteExpense(expenseId: string) {
+    this.httpClient
+      .delete(`${this.baseURL}/${expenseId}`)
+      .subscribe(() => console.log('Deleted'));
+  }
 }

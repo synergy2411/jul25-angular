@@ -23,6 +23,36 @@
       "title": "insurance",
       "createdAt": "2024-03-09",
       "amount": 199
+    },
+    {
+      "title": "Carpet",
+      "createdAt": "2025-07-15",
+      "amount": 20,
+      "id": "MaMhlZE"
+    },
+    {
+      "title": "A Bag",
+      "createdAt": "2025-07-02",
+      "amount": 16,
+      "id": "pnXNmsK"
+    },
+    {
+      "title": "Stationary",
+      "createdAt": "2025-07-08",
+      "amount": 10,
+      "id": "Remx23l"
+    },
+    {
+      "title": "An Eraser",
+      "createdAt": "2025-07-09",
+      "amount": 3,
+      "id": "heGTLU8"
+    },
+    {
+      "title": "A Pen",
+      "createdAt": "2025-07-02",
+      "amount": 20,
+      "id": "TJQovKt"
     }
   ]
 }
