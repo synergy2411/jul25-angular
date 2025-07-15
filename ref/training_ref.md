@@ -276,7 +276,7 @@ friends.push("Joey"); // Impure change
 
 - Micro-frontend
 
-- CounterService
+- CounterService - counter - subject
 - CounterOne
 - CounterTwo
 
@@ -324,3 +324,24 @@ friends.push("Joey"); // Impure change
 - of
 - from
 - fromEvent
+
+# Subjects : are both Observables as well as Observers
+
+- next
+- error
+- complete
+- pipe
+- subscribe
+
+# Subject Types
+
+- BehaviourSubject : starts with seed / initial value
+- ReplaySubject : replays last emitted events
+- AsyncSubject : last emitted value upon completion
+
+# Configure JSON SERVER Steps
+
+> npm install -g json-server@0.17.4
+> json-server --version
+> create db.json
+> json-server --watch db.json
