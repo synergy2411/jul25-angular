@@ -269,6 +269,11 @@ friends.push("Joey"); // Impure change
 - SRP : Single Responsibility Principle
 - ng g s services/user
 
+# Dependency Injector Hierarchy
+
+- Element Hierarchy
+- Module Hierarchy
+
 - Micro-frontend
 
 - CounterService
@@ -296,3 +301,26 @@ friends.push("Joey"); // Impure change
 - Manual Http polling
 - Not Cancelable
 - Only Async
+
+---
+
+# Observer :
+
+- next
+- error
+- complete
+
+# Observable :
+
+- pipe
+- subscribe
+
+# Creational Operators -
+
+- Observable Constructor (Create)
+- range
+- interval
+- timer
+- of
+- from
+- fromEvent

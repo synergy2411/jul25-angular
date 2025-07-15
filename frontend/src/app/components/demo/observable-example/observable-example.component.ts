@@ -1,12 +1,67 @@
-import { Component } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import {
+  Observable,
+  Subscription,
+  interval,
+  of,
+  from,
+  fromEvent,
+  tap,
+  take,
+  filter,
+  map,
+  Subject,
+  BehaviorSubject,
+  ReplaySubject,
+  AsyncSubject,
+} from 'rxjs';
 
 @Component({
   selector: 'app-observable-example',
   templateUrl: './observable-example.component.html',
   styleUrl: './observable-example.component.css',
 })
-export class ObservableExampleComponent {
+export class ObservableExampleComponent implements OnInit {
+  interval$ = interval(1000);
+
+  of$ = of('Monica', 'Rachel', 'Joey', 'Chandler');
+
+  from$ = from([99, 98, 95, 92, 100]);
+
+  fromEvent$ = fromEvent(document, 'click')
+    .pipe(tap((value) => console.log('Click : ', value)))
+    .subscribe(console.log);
+
+  ngOnInit(): void {
+    // const subject = new Subject();
+    // const subject = new BehaviorSubject(99);
+    // const subject = new ReplaySubject(2);
+    const subject = new AsyncSubject();
+
+    subject.subscribe((data) => console.log('Subs 1 : ', data));
+
+    subject.next(98);
+    subject.next(99);
+    subject.next(101);
+
+    subject.subscribe((data) => console.log('Subs 2 : ', data));
+
+    subject.next(102);
+    subject.complete();
+  }
+
+  onIntervalSubscribe() {
+    this.interval$
+      .pipe(
+        filter((value) => value % 2 === 0),
+        take(5),
+        map((value) => value * 2)
+      )
+      .subscribe(console.log);
+    // this.of$.subscribe(console.log);
+    // this.from$.subscribe(console.log);
+  }
+
   obs$ = new Observable((observer) => {
     console.log('Inside Observable');
     setTimeout(() => observer.next('First Package'), 1000);
