@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
@@ -24,6 +24,7 @@ import { ObservableExampleComponent } from './components/demo/observable-example
 import { ExpensesComponent } from './components/expenses/expenses.component';
 import { ExpenseItemComponent } from './components/expenses/expense-item/expense-item.component';
 import { ExpenseFormComponent } from './components/expenses/expense-form/expense-form.component';
+import { LoggerInterceptor } from './services/interceptors/logger.interceptor';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,12 @@ import { ExpenseFormComponent } from './components/expenses/expense-form/expense
     HttpClientModule,
   ],
   providers: [
-    CounterService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggerInterceptor,
+      multi: true,
+    },
+    { provide: CounterService, useClass: CounterService },
     // UserService,
     // {provide : UserService, useClass: UserService}
   ], // Services

@@ -345,3 +345,9 @@ friends.push("Joey"); // Impure change
 > json-server --version
 > create db.json
 > json-server --watch db.json
+
+# HttpClient
+
+- Observable API
+- Typed Request
+- Interceptors : intercepts outgoing request and incoming response

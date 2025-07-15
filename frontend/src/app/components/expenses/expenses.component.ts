@@ -20,12 +20,11 @@ export class ExpensesComponent implements OnInit {
   }
 
   onAddNewExpense(newExpense: IExpense) {
-    this.expenseService
-      .createExpense(newExpense)
-      .subscribe(
-        (createdExpense: IExpense) =>
-          (this.expenses = [createdExpense, ...this.expenses])
-      );
+    this.expenseService.createExpense(newExpense).subscribe(
+      (createdExpense: IExpense) =>
+        // this.expenses.push(createdExpense);   // Impure change
+        (this.expenses = [createdExpense, ...this.expenses])
+    );
     this.addExpenseToggle = false;
   }
 
