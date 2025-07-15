@@ -28,4 +28,13 @@ export class ExpensesComponent implements OnInit {
       );
     this.addExpenseToggle = false;
   }
+
+  onDeleteExpense(expenseId: string) {
+    this.expenseService.deleteExpense(expenseId).subscribe(() => {
+      const position = this.expenses.findIndex(
+        (expense) => expense.id === expenseId
+      );
+      this.expenses.splice(position, 1);
+    });
+  }
 }

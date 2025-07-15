@@ -24,8 +24,6 @@ export class ExpensesService {
   }
 
   deleteExpense(expenseId: string) {
-    this.httpClient
-      .delete(`${this.baseURL}/${expenseId}`)
-      .subscribe(() => console.log('Deleted'));
+    return this.httpClient.delete(`${this.baseURL}/${expenseId}`);
   }
 }

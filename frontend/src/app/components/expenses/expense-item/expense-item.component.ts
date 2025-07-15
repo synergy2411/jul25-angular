@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IExpense } from '../../../model/expense';
 
 @Component({
@@ -8,4 +8,17 @@ import { IExpense } from '../../../model/expense';
 })
 export class ExpenseItemComponent {
   @Input() expense!: IExpense;
+
+  @Output() deleteExpenseEvent = new EventEmitter<string>();
+
+  onDelete() {
+    if (
+      confirm(
+        'Are you sure to delete this item - ' +
+          this.expense.title.toUpperCase() +
+          '?'
+      )
+    )
+      this.deleteExpenseEvent.emit(this.expense.id);
+  }
 }
