@@ -23,7 +23,7 @@ export class ResponseInterceptor implements HttpInterceptor {
           return throwError(() => new Error('404 - Not Found'));
         }
         if (error.status === 401) {
-          return throwError(() => new Error('401 - Client side error'));
+          return throwError(() => new Error('401 - Unauthorized'));
         }
         return throwError(() => new Error('Something went wrong'));
       })

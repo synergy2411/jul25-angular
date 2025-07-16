@@ -359,3 +359,12 @@ friends.push("Joey"); // Impure change
 # Global Error Handler
 
 - ErrorHandler interface
+
+# To install Firebase SDK
+
+- npm install firebase
+
+- AuthService :
+  > user registration / new user
+  > login to firebase
+  > token

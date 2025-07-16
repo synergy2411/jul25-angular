@@ -8,6 +8,7 @@ import {
   ValidationErrors,
   FormArray,
 } from '@angular/forms';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,7 @@ import {
 export class RegisterComponent {
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
     this.registerForm = this.fb.group(
       {
         username: new FormControl('', [Validators.required, Validators.email]),
@@ -71,6 +72,10 @@ export class RegisterComponent {
     console.log(this.registerForm);
     console.log('Username : ', this.registerForm.value.username);
     console.log('Password : ', this.registerForm.value.password);
+    this.authService.createUser(
+      this.registerForm.value.username,
+      this.registerForm.value.password
+    );
   }
 
   // Custom Validator Function for checking Exclamation Sign
