@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
 
 import { FirebaseApp, initializeApp } from 'firebase/app';
-import { Auth, createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import {
+  Auth,
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
+} from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root',
@@ -33,5 +39,26 @@ export class AuthService {
     }
   }
 
-  loginUser(email: string, password: string) {}
+  async loginUser(email: string, password: string) {
+    try {
+      const userCredentials = await signInWithEmailAndPassword(
+        this.auth,
+        email,
+        password
+      );
+      const token = await userCredentials.user.getIdToken();
+      console.log('TOKEN : ', token);
+      this.token = token;
+    } catch (err: any) {
+      throw new Error(err);
+    }
+  }
+
+  isAuthenticated() {
+    return this.token !== '';
+  }
+
+  async userLogout() {
+    await signOut(this.auth);
+  }
 }
