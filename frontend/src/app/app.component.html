@@ -5,8 +5,6 @@
 <div class="container">
   <!-- <app-users></app-users> -->
 
-  <!-- <app-expenses></app-expenses> -->
-
   <!-- <app-observable-example></app-observable-example> -->
 
   <!-- <app-counter-one></app-counter-one>
@@ -18,6 +16,8 @@
   <!-- <app-register></app-register> -->
 
   <app-login></app-login>
+
+  <app-expenses *ngIf="authService.isAuthenticated()"></app-expenses>
 
   <!-- <app-pipe-example></app-pipe-example> -->
 

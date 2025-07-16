@@ -8,9 +8,12 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AuthService } from '../auth.service';
 
 @Injectable()
 export class LoggerInterceptor implements HttpInterceptor {
+  constructor(private authService: AuthService) {}
+
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
@@ -19,12 +22,11 @@ export class LoggerInterceptor implements HttpInterceptor {
 
     // console.log('OUTGOING REQUEST :', req);
 
-    // const clonedReq = req.clone({
-    //   headers: new HttpHeaders().set('authorization', 'Bearer TOKEN_VALUE'),
-    //   params: new HttpParams().set('', ''),
-    // });
+    const clonedReq = req.clone({
+      params: new HttpParams().set('auth', this.authService.getToken()),
+    });
 
     // console.log('CLONE REQUEST :', clonedReq);
-    return next.handle(req);
+    return next.handle(clonedReq);
   }
 }

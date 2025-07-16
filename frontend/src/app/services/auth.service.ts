@@ -61,4 +61,8 @@ export class AuthService {
   async userLogout() {
     await signOut(this.auth);
   }
+
+  getToken() {
+    return this.token;
+  }
 }
