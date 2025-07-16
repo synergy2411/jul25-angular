@@ -1,8 +1,10 @@
-<h1>App Works!</h1>
-
-<hr />
-
 <div class="container">
+  <app-header></app-header>
+
+  <br />
+
+  <router-outlet></router-outlet>
+
   <!-- <app-users></app-users> -->
 
   <!-- <app-observable-example></app-observable-example> -->
@@ -15,9 +17,9 @@
 
   <!-- <app-register></app-register> -->
 
-  <app-login></app-login>
+  <!-- <app-login></app-login> -->
 
-  <app-expenses *ngIf="authService.isAuthenticated()"></app-expenses>
+  <!-- <app-expenses *ngIf="authService.isAuthenticated()"></app-expenses> -->
 
   <!-- <app-pipe-example></app-pipe-example> -->
 

@@ -368,3 +368,7 @@ friends.push("Joey"); // Impure change
   > user registration / new user
   > login to firebase
   > token
+
+# Angular Router Terminologies
+
+- Routes : route configuration for path and component

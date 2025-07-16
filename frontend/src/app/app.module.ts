@@ -2,6 +2,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
@@ -27,6 +28,8 @@ import { ExpenseFormComponent } from './components/expenses/expense-form/expense
 import { LoggerInterceptor } from './services/interceptors/logger.interceptor';
 import { ResponseInterceptor } from './services/interceptors/response.interceptor';
 import { GlobalErrorHandlerService } from './services/errors/global-error-handler.service';
+import { APP_ROUTES } from './app.routes';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,7 @@ import { GlobalErrorHandlerService } from './services/errors/global-error-handle
     ExpensesComponent,
     ExpenseItemComponent,
     ExpenseFormComponent,
+    HeaderComponent,
   ],
   imports: [
     // Modules - built-in, custom
@@ -57,6 +61,7 @@ import { GlobalErrorHandlerService } from './services/errors/global-error-handle
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES),
   ],
   providers: [
     {
