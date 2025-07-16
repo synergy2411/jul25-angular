@@ -19,12 +19,12 @@ export class LoggerInterceptor implements HttpInterceptor {
 
     // console.log('OUTGOING REQUEST :', req);
 
-    const clonedReq = req.clone({
-      headers: new HttpHeaders().set('authorization', 'Bearer TOKEN_VALUE'),
-      params: new HttpParams().set('', ''),
-    });
+    // const clonedReq = req.clone({
+    //   headers: new HttpHeaders().set('authorization', 'Bearer TOKEN_VALUE'),
+    //   params: new HttpParams().set('', ''),
+    // });
 
     // console.log('CLONE REQUEST :', clonedReq);
-    return next.handle(clonedReq);
+    return next.handle(req);
   }
 }
