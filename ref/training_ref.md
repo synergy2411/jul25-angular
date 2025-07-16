@@ -339,6 +339,8 @@ friends.push("Joey"); // Impure change
 - ReplaySubject : replays last emitted events
 - AsyncSubject : last emitted value upon completion
 
+---
+
 # Configure JSON SERVER Steps
 
 > npm install -g json-server@0.17.4
@@ -346,8 +348,14 @@ friends.push("Joey"); // Impure change
 > create db.json
 > json-server --watch db.json
 
-# HttpClient
+# HttpClient : HttpClientModule
 
 - Observable API
 - Typed Request
 - Interceptors : intercepts outgoing request and incoming response
+  > HTTP_INTERCEPTORS
+- Better Error Handling
+
+# Global Error Handler
+
+- ErrorHandler interface

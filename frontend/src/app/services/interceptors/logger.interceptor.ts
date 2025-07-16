@@ -3,6 +3,7 @@ import {
   HttpHandler,
   HttpHeaders,
   HttpInterceptor,
+  HttpParams,
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -16,13 +17,14 @@ export class LoggerInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     console.log('Logger Interceptor works!');
 
-    console.log('OUTGOING REQUEST :', req);
+    // console.log('OUTGOING REQUEST :', req);
 
     const clonedReq = req.clone({
       headers: new HttpHeaders().set('authorization', 'Bearer TOKEN_VALUE'),
+      params: new HttpParams().set('', ''),
     });
 
-    console.log('CLONE REQUEST :', clonedReq);
+    // console.log('CLONE REQUEST :', clonedReq);
     return next.handle(clonedReq);
   }
 }
