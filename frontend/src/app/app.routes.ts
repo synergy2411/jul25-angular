@@ -5,6 +5,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { ExpensesComponent } from './components/expenses/expenses.component';
 import { PipeExampleComponent } from './components/demo/pipe-example/pipe-example.component';
 import { ObservableExampleComponent } from './components/demo/observable-example/observable-example.component';
+import { LoginGuard } from './services/guards/login.guard';
 
 export const APP_ROUTES: Routes = [
   {
@@ -27,6 +28,7 @@ export const APP_ROUTES: Routes = [
   {
     path: 'expenses',
     component: ExpensesComponent,
+    canActivate: [LoginGuard],
   },
   {
     path: 'pipe',

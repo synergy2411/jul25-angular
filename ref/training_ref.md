@@ -372,3 +372,4 @@ friends.push("Joey"); // Impure change
 # Angular Router Terminologies
 
 - Routes : route configuration for path and component
+- Guards : CanActivate, CanDeactivate, CanResolve
