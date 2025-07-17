@@ -7,6 +7,9 @@ import { PipeExampleComponent } from './components/demo/pipe-example/pipe-exampl
 import { ObservableExampleComponent } from './components/demo/observable-example/observable-example.component';
 import { LoginGuard } from './services/guards/login.guard';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ProductsComponent } from './components/demo/products/products.component';
+import { OverviewComponent } from './components/demo/products/overview/overview.component';
+import { SpecificationComponent } from './components/demo/products/specification/specification.component';
 
 export const APP_ROUTES: Routes = [
   {
@@ -40,6 +43,17 @@ export const APP_ROUTES: Routes = [
   {
     path: 'observable',
     component: ObservableExampleComponent,
+  },
+  {
+    path: 'products', // http://localhost:4200/products
+    component: ProductsComponent,
+    children: [
+      {
+        path: ':productId/:productName/overview',
+        component: OverviewComponent,
+      }, // http://localhost:4200/products/overview
+      { path: 'specification', component: SpecificationComponent }, // // http://localhost:4200/products/specification
+    ],
   },
   {
     path: '**', // if above path does not match

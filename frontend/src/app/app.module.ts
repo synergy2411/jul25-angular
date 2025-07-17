@@ -31,6 +31,9 @@ import { GlobalErrorHandlerService } from './services/errors/global-error-handle
 import { APP_ROUTES } from './app.routes';
 import { HeaderComponent } from './components/header/header.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ProductsComponent } from './components/demo/products/products.component';
+import { OverviewComponent } from './components/demo/products/overview/overview.component';
+import { SpecificationComponent } from './components/demo/products/specification/specification.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     ExpenseFormComponent,
     HeaderComponent,
     PageNotFoundComponent,
+    ProductsComponent,
+    OverviewComponent,
+    SpecificationComponent,
   ],
   imports: [
     // Modules - built-in, custom

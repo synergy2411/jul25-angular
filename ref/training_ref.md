@@ -384,6 +384,20 @@ friends.push("Joey"); // Impure change
 - RouterOutlet: provide space to load component template
 - Guards : CanActivate, CanDeactivate, CanResolve
 - Router Service: programmatically navigate
+- Nested Routing / Child Routing
+- ActivatedRoute Service : access the path in URL
+
+  > Route Parameter - dynamic segment of URL; Part of route
+  > Query Parameter - additional info to the route; ?
 
 - Hashbang Mode : http://www.example.com/!#/first
 - HTML5 Mode / Regular Mode : http://www.example.com/first
+
+# Nested Routes
+
+http://localhost:4200/products (router-outlet)
+http://localhost:4200/products/199/overview
+http://localhost:4200/products/100/specification
+http://localhost:4200/products/abc
+
+# Dynamic Route / Route Parameter
