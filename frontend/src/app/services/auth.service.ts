@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import {
@@ -17,7 +18,7 @@ export class AuthService {
   private token = '';
   private auth!: Auth;
 
-  constructor() {
+  constructor(private router: Router) {
     this.firebaseApp = initializeApp({
       apiKey: 'AIzaSyACzpjRH3LRa1UbCp3UO5m74LO6CJf8sc8',
       authDomain: 'sk-ng-jul-25.firebaseapp.com',
@@ -49,6 +50,7 @@ export class AuthService {
       const token = await userCredentials.user.getIdToken();
       console.log('TOKEN : ', token);
       this.token = token;
+      this.router.navigateByUrl('/expenses');
     } catch (err: any) {
       throw new Error(err);
     }
@@ -60,6 +62,8 @@ export class AuthService {
 
   async userLogout() {
     await signOut(this.auth);
+    this.token = '';
+    this.router.navigateByUrl('/login');
   }
 
   getToken() {

@@ -30,6 +30,7 @@ import { ResponseInterceptor } from './services/interceptors/response.intercepto
 import { GlobalErrorHandlerService } from './services/errors/global-error-handler.service';
 import { APP_ROUTES } from './app.routes';
 import { HeaderComponent } from './components/header/header.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { HeaderComponent } from './components/header/header.component';
     ExpenseItemComponent,
     ExpenseFormComponent,
     HeaderComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     // Modules - built-in, custom

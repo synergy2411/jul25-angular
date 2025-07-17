@@ -360,6 +360,11 @@ friends.push("Joey"); // Impure change
 
 - ErrorHandler interface
 
+# JWT Token
+
+- Angular Service
+- WebStorage - LocalStorage and SessionStorage
+
 # To install Firebase SDK
 
 - npm install firebase
@@ -371,5 +376,14 @@ friends.push("Joey"); // Impure change
 
 # Angular Router Terminologies
 
+- Single Page Apps
+
 - Routes : route configuration for path and component
+- RouterModule.forRoot() : register routes with app
+- RouterLink: prevents reloading of page
+- RouterOutlet: provide space to load component template
 - Guards : CanActivate, CanDeactivate, CanResolve
+- Router Service: programmatically navigate
+
+- Hashbang Mode : http://www.example.com/!#/first
+- HTML5 Mode / Regular Mode : http://www.example.com/first

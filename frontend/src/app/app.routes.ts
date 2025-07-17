@@ -6,6 +6,7 @@ import { ExpensesComponent } from './components/expenses/expenses.component';
 import { PipeExampleComponent } from './components/demo/pipe-example/pipe-example.component';
 import { ObservableExampleComponent } from './components/demo/observable-example/observable-example.component';
 import { LoginGuard } from './services/guards/login.guard';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export const APP_ROUTES: Routes = [
   {
@@ -20,10 +21,12 @@ export const APP_ROUTES: Routes = [
   {
     path: 'login', // http://localhost:4200/login
     component: LoginComponent,
+    // outlet: 'primary',
   },
   {
     path: 'register',
     component: RegisterComponent,
+    // outlet: 'secondary',
   },
   {
     path: 'expenses',
@@ -37,5 +40,10 @@ export const APP_ROUTES: Routes = [
   {
     path: 'observable',
     component: ObservableExampleComponent,
+  },
+  {
+    path: '**', // if above path does not match
+    component: PageNotFoundComponent,
+    pathMatch: 'full',
   },
 ];
