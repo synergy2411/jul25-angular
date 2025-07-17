@@ -388,7 +388,9 @@ friends.push("Joey"); // Impure change
 - ActivatedRoute Service : access the path in URL
 
   > Route Parameter - dynamic segment of URL; Part of route
-  > Query Parameter - additional info to the route; ?
+  > Query Parameter - additional info to the route; Not part of actual route
+
+  http://www.example.com/products/specification?id=199&name=iphone
 
 - Hashbang Mode : http://www.example.com/!#/first
 - HTML5 Mode / Regular Mode : http://www.example.com/first

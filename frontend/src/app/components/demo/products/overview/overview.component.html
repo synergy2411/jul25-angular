@@ -1,2 +1,16 @@
 <h2>Product Id : {{ productId }}</h2>
 <h4>Product Name : {{ productName }}</h4>
+
+<p>
+  Show
+  <a
+    [routerLink]="productSpecification"
+    [queryParams]="{ description: 'About this product', price: '2999' }"
+    >more</a
+  >
+  details about this product.
+</p>
+
+<hr />
+
+<router-outlet></router-outlet>

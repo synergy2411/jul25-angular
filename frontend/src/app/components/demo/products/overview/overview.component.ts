@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class OverviewComponent implements OnInit {
   productId!: number;
   productName!: string;
+  productSpecification!: string;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -22,6 +23,7 @@ export class OverviewComponent implements OnInit {
 
     this.route.paramMap.subscribe((params) => {
       this.productId = +params.get('productId')!;
+      this.productSpecification = `/products/${this.productId}/${this.productName}/overview/specification`;
     });
   }
 }

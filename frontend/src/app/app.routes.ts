@@ -51,8 +51,10 @@ export const APP_ROUTES: Routes = [
       {
         path: ':productId/:productName/overview',
         component: OverviewComponent,
-      }, // http://localhost:4200/products/overview
-      { path: 'specification', component: SpecificationComponent }, // // http://localhost:4200/products/specification
+        children: [
+          { path: 'specification', component: SpecificationComponent },
+        ],
+      }, // http://localhost:4200/products/productId/productName/overview/specification
     ],
   },
   {
