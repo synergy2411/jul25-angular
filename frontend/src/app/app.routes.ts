@@ -20,6 +20,7 @@ export const APP_ROUTES: Routes = [
   {
     path: 'users', // http://localhost:4200/users
     component: UsersComponent,
+    outlet: 'second',
   },
   {
     path: 'login', // http://localhost:4200/login
@@ -29,7 +30,7 @@ export const APP_ROUTES: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
-    // outlet: 'secondary',
+    outlet: 'second',
   },
   {
     path: 'expenses',

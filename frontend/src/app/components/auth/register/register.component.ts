@@ -9,6 +9,7 @@ import {
   FormArray,
 } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,11 @@ import { AuthService } from '../../../services/auth.service';
 export class RegisterComponent {
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.registerForm = this.fb.group(
       {
         username: new FormControl('', [Validators.required, Validators.email]),
@@ -76,6 +81,7 @@ export class RegisterComponent {
       this.registerForm.value.username,
       this.registerForm.value.password
     );
+    this.router.navigate([{ outlets: { second: null } }]);
   }
 
   // Custom Validator Function for checking Exclamation Sign
@@ -110,5 +116,9 @@ export class RegisterComponent {
       }
     }
     return null;
+  }
+
+  onClose() {
+    this.router.navigate([{ outlets: { second: null } }]);
   }
 }
