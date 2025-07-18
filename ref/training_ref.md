@@ -427,19 +427,30 @@ http://localhost:4200/products/abc
 
 # Debugging
 
+- TypeScript Compiler
+- JSON Pipe
+- Console Logging
+- Debugger Statement
+- Angular DevTools
+- Tap Operator
+
 # App Optimization
+
+- Unsubscribe the observable
+- Disable the change detection
+- Change Detection Strategy to OnPush
+- Avoid computing values in template
+- Lazy loading concept
 
 # Standalone Apps
 
-# Signals : reactive states, signal(initialValue)
+# Signals : reactive states
 
-# Testing
-
-# App Prepare for Production
-
-- ng build > HTML (index.html), CSS, JAVASCRIPT
-
-# Angular Material
+- signal(initialValue)
+- computed signals : based on other signal
+- effect() : used for loggin and debugging for signals
+- linkedSignals
+- resource
 
 # New Project - Standalone Project
 
@@ -448,10 +459,60 @@ http://localhost:4200/products/abc
 > No modules
 > Reduce the boilerplate code
 > Enhance reusability
-> Directly import in component / directive
+> Directly import in component / directive / Pipe
 > Tree-shaking
 
 # App Optimization
 
 - ChangeDetectorRef : detect(), reattach(), markForChanges()
 - ChangeDetectionStrategy : Default and OnPush
+
+# Testing -
+
+- Unit Testing : Function, Class, Component
+- Integration Testing : more than one units are tested together
+- End-2-End Testing : Manually
+
+- Jasmine : Testing Framework for JavaScript Apps
+
+  > Assertions
+  > Matchers
+  > Built-in Functions
+
+- Karma : Test Runner
+
+  > Running the test
+  > Opening Chrome browser
+  > Code Coverage
+  > HTML Reports
+
+- ng test
+- .spec.ts
+
+- @Test : test("", () =>{}), it("", ()=>{})
+- @BeforeAll : beforeAll()
+- @BeforeEach : beforeEach()
+- @AfterAll : afterAll()
+- @AfterEach : afterEach()
+
+- Assertions : expect()
+
+- Component Testing
+
+  > is created
+  > properties
+  > template
+
+- Pipe Testing
+
+  > transform() to be tested
+
+- Service Testing
+  > business logic
+  > return values (data, promise, observable)
+
+# App Prepare for Production
+
+- ng build > HTML (index.html), CSS, JAVASCRIPT
+
+# Angular Material
