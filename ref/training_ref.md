@@ -374,20 +374,28 @@ friends.push("Joey"); // Impure change
   > login to firebase
   > token
 
+---
+
 # Angular Router Terminologies
 
 - Single Page Apps
+
+  > Complete app loaded on browser in one go.
+  > Routes are handled at client side
+  > Better user experience
+  > Less network bandwidth usage
+  > Lazy loading to decrease app bootstrap time by reducing the final bundle of the app
 
 - Routes : route configuration for path and component
 - RouterModule.forRoot() : register routes with app
 - RouterLink: prevents reloading of page
 - RouterOutlet: provide space to load component template
 - Guards : CanActivate, CanDeactivate, CanResolve
-- Router Service: programmatically navigate
-- Nested Routing / Child Routing
+- Router Service: programmatically navigate (navigateByUrl(), navigate())
+- Nested Routing / Child Routing (children : [{}, {}])
 - ActivatedRoute Service : access the path in URL
 
-  > Route Parameter - dynamic segment of URL; Part of route
+  > Route Parameter (:productId/:productName) - dynamic segment of URL; Part of route
   > Query Parameter - additional info to the route; Not part of actual route
 
   http://www.example.com/products/specification?id=199&name=iphone
@@ -395,7 +403,7 @@ friends.push("Joey"); // Impure change
 - Hashbang Mode : http://www.example.com/!#/first
 - HTML5 Mode / Regular Mode : http://www.example.com/first
 
-# Nested Routes
+# Nested Routes / Child Routing
 
 http://localhost:4200/products (router-outlet)
 http://localhost:4200/products/199/overview
@@ -403,3 +411,47 @@ http://localhost:4200/products/100/specification
 http://localhost:4200/products/abc
 
 # Dynamic Route / Route Parameter
+
+# Module
+
+- Root : One per angular app; imports BrowserModule
+- Feature : any number of feature modules; imports CommonModule
+
+# Lazy Loading:
+
+- loadChildren property in routing
+- must not be the part of root module
+- separate chunk is created
+
+---
+
+# Debugging
+
+# App Optimization
+
+# Standalone Apps
+
+# Signals : reactive states, signal(initialValue)
+
+# Testing
+
+# App Prepare for Production
+
+- ng build > HTML (index.html), CSS, JAVASCRIPT
+
+# Angular Material
+
+# New Project - Standalone Project
+
+> ng new standalone-app [standalone=false --no-routing]
+
+> No modules
+> Reduce the boilerplate code
+> Enhance reusability
+> Directly import in component / directive
+> Tree-shaking
+
+# App Optimization
+
+- ChangeDetectorRef : detect(), reattach(), markForChanges()
+- ChangeDetectionStrategy : Default and OnPush
